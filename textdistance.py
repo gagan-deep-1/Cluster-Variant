@@ -3,13 +3,6 @@ import json
 from scipy.spatial import distance
 import pandas as pd
 import nltk
-def similarity1(x, y):
-    return distance.jaccard(x, y) #textdistance.jaccard(string1 , string2)
-
-def similarity(list1, list2):
-    intersection = len(list(set(list1).intersection(list2)))
-    union = (len(list1) + len(list2)) - intersection
-    return float(intersection) / union
 
 def nltkSim(x,y):
     return (1-nltk.jaccard_distance(x, y))
